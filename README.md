@@ -6,7 +6,8 @@ Verilog is an Hardware Description Language(HDL). It is used to model electronic
 ```
 Usually, you are to compile the test bench code rather than the original verilog file. To compile the test bench code use 
 ```
-iverilog -o <file_name>_tb.vvp <file_name>_tb.v
+iverilog -o <file_name>_tb.vpp <file_name>_tb.v
+vpp <file_name>_tb.vpp
 ```
 ** NOTE: VPP is a C++ class library. A C++ program linked to VPP has the ability to simulate and generate Verilog HDL code. **
 
