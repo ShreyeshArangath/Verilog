@@ -3,19 +3,19 @@
 // Implement a 5-to-32 Line Decoder.
 //
 
-module top(A, D)
+// module top(A, D)
 
-// YOUR VERILOG CODE HERE
+// // YOUR VERILOG CODE HERE
 
 
-endmodule
+// endmodule
 
 // OTHER MODULES HERE (IF REQUIRED)
 
 module decoder1to2(A,D);
 
     input A;
-    output D[1:0];
+    output[1:0] D;
 
     assign D[0] = ~A;
     assign D[1] = A;
@@ -24,13 +24,13 @@ endmodule
 
 module decoder2to4(A,D);
 
-    input A[1:0];
-    output D[3:0];
+    input[1:0] A;
+    output[3:0] D;
 
-    wire W[3:0];
+    wire[3:0] W;
 
-    decoder1to2 U0(.A(A[0]),.D(D[3:2]));
-    decoder1to2 U1(.A(A[1]),.D(D[0:1]));
+    decoder1to2 U0(.A(A[0]),.D(W[3:2]));
+    decoder1to2 U1(.A(A[1]),.D(W[1:0]));
 
     assign D[0] = W[3] & W[1];
     assign D[1] = W[2] & W[1];
@@ -41,13 +41,22 @@ endmodule
 
 module decoder3to8(A,D);
 
-    input A[2:0];
-    output D[7:0];
+    input[2:0] A;
+    output[7:0] D;
 
-    wire W[7:0];
+    wire[5:0] W;
 
-    decoder2to4 U0(.A(A[1:0]), .D(D[7:4]));
-    decoder1to2 U1(.A(A[2]), .D(D[0:3]));
+    decoder2to4 U0(.A(A[1:0]), .D(W[5:2]));
+    decoder1to2 U1(.A(A[2]), .D(W[1:0]));
+
+    assign D[0] = W[5] & W[1];
+    assign D[1] = W[5] & W[0];
+    assign D[2] = W[4] & W[1];
+    assign D[3] = W[4] & W[0];
+    assign D[4] = W[3] & W[1];
+    assign D[5] = W[3] & W[0];
+    assign D[6] = W[2] & W[1];
+    assign D[7] = W[2] & W[0];
 
 
 endmodule
