@@ -1,0 +1,94 @@
+#! /usr/local/Cellar/icarus-verilog/10.3/bin/vvp
+:ivl_version "10.3 (stable)" "(v10_3)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fc242e06c40 .scope module, "decoder2to4_tb" "decoder2to4_tb" 2 4;
+ .timescale -9 -9;
+v0x7fc242e1c7c0_0 .var "A", 1 0;
+v0x7fc242e1c850_0 .net "D", 3 0, L_0x7fc242e1d8b0;  1 drivers
+S_0x7fc242e03190 .scope module, "UUT" "decoder2to4" 2 9, 3 5 0, S_0x7fc242e06c40;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 2 "A"
+    .port_info 1 /OUTPUT 4 "D"
+L_0x7fc242e1d270 .functor AND 1, L_0x7fc242e1d0c0, L_0x7fc242e1d1a0, C4<1>, C4<1>;
+L_0x7fc242e1d540 .functor AND 1, L_0x7fc242e1d380, L_0x7fc242e1d4a0, C4<1>, C4<1>;
+L_0x7fc242e1d800 .functor AND 1, L_0x7fc242e1d670, L_0x7fc242e1d710, C4<1>, C4<1>;
+L_0x7fc242e1d420 .functor AND 1, L_0x7fc242e1da80, L_0x7fc242e1dc80, C4<1>, C4<1>;
+v0x7fc242e1bc90_0 .net "A", 1 0, v0x7fc242e1c7c0_0;  1 drivers
+v0x7fc242e1bd40_0 .net "D", 3 0, L_0x7fc242e1d8b0;  alias, 1 drivers
+v0x7fc242e1bdf0_0 .net "W", 3 0, L_0x7fc242e1cfa0;  1 drivers
+v0x7fc242e1beb0_0 .net *"_s12", 0 0, L_0x7fc242e1d0c0;  1 drivers
+v0x7fc242e1bf60_0 .net *"_s14", 0 0, L_0x7fc242e1d1a0;  1 drivers
+v0x7fc242e1c050_0 .net *"_s15", 0 0, L_0x7fc242e1d270;  1 drivers
+v0x7fc242e1c100_0 .net *"_s20", 0 0, L_0x7fc242e1d380;  1 drivers
+v0x7fc242e1c1b0_0 .net *"_s22", 0 0, L_0x7fc242e1d4a0;  1 drivers
+v0x7fc242e1c260_0 .net *"_s23", 0 0, L_0x7fc242e1d540;  1 drivers
+v0x7fc242e1c370_0 .net *"_s28", 0 0, L_0x7fc242e1d670;  1 drivers
+v0x7fc242e1c420_0 .net *"_s30", 0 0, L_0x7fc242e1d710;  1 drivers
+v0x7fc242e1c4d0_0 .net *"_s31", 0 0, L_0x7fc242e1d800;  1 drivers
+v0x7fc242e1c580_0 .net *"_s37", 0 0, L_0x7fc242e1da80;  1 drivers
+v0x7fc242e1c630_0 .net *"_s39", 0 0, L_0x7fc242e1dc80;  1 drivers
+v0x7fc242e1c6e0_0 .net *"_s40", 0 0, L_0x7fc242e1d420;  1 drivers
+L_0x7fc242e1cbc0 .part v0x7fc242e1c7c0_0, 0, 1;
+L_0x7fc242e1cf00 .part v0x7fc242e1c7c0_0, 1, 1;
+L_0x7fc242e1cfa0 .concat8 [ 2 2 0 0], L_0x7fc242e1cd10, L_0x7fc242e1c9b0;
+L_0x7fc242e1d0c0 .part L_0x7fc242e1cfa0, 3, 1;
+L_0x7fc242e1d1a0 .part L_0x7fc242e1cfa0, 1, 1;
+L_0x7fc242e1d380 .part L_0x7fc242e1cfa0, 2, 1;
+L_0x7fc242e1d4a0 .part L_0x7fc242e1cfa0, 1, 1;
+L_0x7fc242e1d670 .part L_0x7fc242e1cfa0, 3, 1;
+L_0x7fc242e1d710 .part L_0x7fc242e1cfa0, 0, 1;
+L_0x7fc242e1d8b0 .concat8 [ 1 1 1 1], L_0x7fc242e1d270, L_0x7fc242e1d800, L_0x7fc242e1d540, L_0x7fc242e1d420;
+L_0x7fc242e1da80 .part L_0x7fc242e1cfa0, 2, 1;
+L_0x7fc242e1dc80 .part L_0x7fc242e1cfa0, 0, 1;
+S_0x7fc242e00420 .scope module, "U0" "decoder1to2" 3 13, 3 24 0, S_0x7fc242e03190;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /OUTPUT 2 "D"
+L_0x7fc242e1c900 .functor NOT 1, L_0x7fc242e1cbc0, C4<0>, C4<0>, C4<0>;
+L_0x7fc242e1cad0 .functor BUFZ 1, L_0x7fc242e1cbc0, C4<0>, C4<0>, C4<0>;
+v0x7fc242e005d0_0 .net "A", 0 0, L_0x7fc242e1cbc0;  1 drivers
+v0x7fc242e1b580_0 .net "D", 1 0, L_0x7fc242e1c9b0;  1 drivers
+v0x7fc242e1b620_0 .net *"_s2", 0 0, L_0x7fc242e1c900;  1 drivers
+v0x7fc242e1b6d0_0 .net *"_s8", 0 0, L_0x7fc242e1cad0;  1 drivers
+L_0x7fc242e1c9b0 .concat8 [ 1 1 0 0], L_0x7fc242e1c900, L_0x7fc242e1cad0;
+S_0x7fc242e1b7b0 .scope module, "U1" "decoder1to2" 3 14, 3 24 0, S_0x7fc242e03190;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /OUTPUT 2 "D"
+L_0x7fc242e1cca0 .functor NOT 1, L_0x7fc242e1cf00, C4<0>, C4<0>, C4<0>;
+L_0x7fc242e1ce10 .functor BUFZ 1, L_0x7fc242e1cf00, C4<0>, C4<0>, C4<0>;
+v0x7fc242e1b990_0 .net "A", 0 0, L_0x7fc242e1cf00;  1 drivers
+v0x7fc242e1ba40_0 .net "D", 1 0, L_0x7fc242e1cd10;  1 drivers
+v0x7fc242e1baf0_0 .net *"_s2", 0 0, L_0x7fc242e1cca0;  1 drivers
+v0x7fc242e1bbb0_0 .net *"_s8", 0 0, L_0x7fc242e1ce10;  1 drivers
+L_0x7fc242e1cd10 .concat8 [ 1 1 0 0], L_0x7fc242e1cca0, L_0x7fc242e1ce10;
+    .scope S_0x7fc242e06c40;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "decoder2to4_tb.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fc242e06c40 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x7fc242e1c7c0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x7fc242e1c7c0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x7fc242e1c7c0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x7fc242e1c7c0_0, 0, 2;
+    %delay 20, 0;
+    %vpi_call 2 19 "$display", "end of test" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "decoder2to4_tb.v";
+    "./decoder.v";
