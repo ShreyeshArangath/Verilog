@@ -20,7 +20,8 @@ module decoder3to8_tb();
         A = 3'd06; #20;
         A = 3'd07; #20;
 
-        $display("end of test. ");
+        $display("test end");
+
     end
 
 endmodule
