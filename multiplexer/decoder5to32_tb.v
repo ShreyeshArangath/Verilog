@@ -1,17 +1,16 @@
 `timescale 1ns/1ns
-`include "R11590613.v"
+`include "mux32to1.v"
 
-module decoder5to8_tb();
+module decoder5to32_tb();
 
     reg[4:0] A;
     wire[31:0] D;
 
-    top UUT(A,D);
-
+    decoder5to32 UUT(A,D);
+    
     initial begin
-        $dumpfile("decoder5to8_tb.vcd");
-        $dumpvars(0, decoder5to8_tb);
-
+        $dumpfile("decoder5to32_tb.vcd");
+        $dumpvars(0, decoder5to32_tb);
         A= 5'd00; #15;
         A= 5'd01; #15;
         A= 5'd02; #15;
@@ -46,7 +45,7 @@ module decoder5to8_tb();
         A= 5'd31; #15; 
 
         $display("test done");
-        
+
     end
 
 endmodule
