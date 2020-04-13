@@ -1,29 +1,24 @@
 `timescale 1ns/1ns
-`include "mux32to1.v"
+`include "R11590613.v"
 
 module mux32to1_tb();
 
     reg[4:0] S;
     reg[31:0] I;
     wire Y;
+    integer s;
 
-    mux32to1 UUT(S,I,Y);
+    top UUT(S,I,Y);
 
     initial begin
         $dumpfile("mux32to1_tb.vcd");
         $dumpvars(0, mux32to1_tb);
 
-        S = 5'd00; 
-        I = 32'd00; 
-        #20;
-
-        S = 5'd00; 
-        I = 32'd01; 
-        #20;
-
-        S = 5'd00; 
-        I = 32'd02; 
-        #20;
+        I = 32'd640; #20;
+        for(s=0; s<32; s++)
+            begin
+               S = s; #20; 
+            end
 
         $display("test ended");
     end
