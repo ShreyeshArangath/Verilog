@@ -10,8 +10,8 @@ wire [3:0] W;
 
 //First two bits of the wire are passed into the module and they are assigned as the output to the module. 
 // W[3:2] = A0', A0
-decoder1to2 U0( .A(A[0]) , .D(W[3:2]));  
-decoder1to2 U1(.A(A[1]), .D(W[1:0])); 
+decoder1to2 U0( .A(~A[0]) , .D(W[3:2]));  
+decoder1to2 U1(.A(~A[1]), .D(W[1:0])); 
 // W[1:0] - Last two bits of the wire
 
 assign D[0] = W[3] & W[1];
